@@ -3,6 +3,9 @@ package com.dragontechmc.chatchannels;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Gui;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -23,5 +26,7 @@ public class ChatChannels
         		"AAA",
         		'A', Items.wooden_axe
         );
+        
+        MinecraftForge.EVENT_BUS.register(new GuiChannelSelector(Minecraft.getMinecraft()));
     }
 }
