@@ -1,0 +1,16 @@
+[
+{
+  "modid": "chatchannels",
+  "name": "Chat Channels",
+  "description": "Simple chat channels",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["magnusri"],
+  "credits": "magnus and the DragonTechMC community",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
