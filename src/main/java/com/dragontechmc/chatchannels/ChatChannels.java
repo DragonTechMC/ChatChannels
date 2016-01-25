@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -20,13 +21,9 @@ public class ChatChannels
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        GameRegistry.addRecipe(new ItemStack(Blocks.obsidian),
-        		"AAA",
-        		"A A",
-        		"AAA",
-        		'A', Items.wooden_axe
-        );
-        
         MinecraftForge.EVENT_BUS.register(new GuiChannelSelector(Minecraft.getMinecraft()));
+        MinecraftForge.EVENT_BUS.register(new ChatHandler(Minecraft.getMinecraft()));
+        //MinecraftForge.EVENT_BUS.register();
+        FMLCommonHandler.instance().bus().register(new MouseHandler(Minecraft.getMinecraft()));
     }
 }
